@@ -6427,7 +6427,7 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha1-BdXKd7RFPphdYPx/+MhZCUpJcQI=
@@ -6634,6 +6634,13 @@ react-is@^16.3.2, react-is@^16.6.3:
   version "16.6.3"
   resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha1-0tdGL8/L5uwNpWrWkEfkflbn6sA=
+
+react-loadable@^5.5.0:
+  version "5.5.0"
+  resolved "http://registry.npm.taobao.org/react-loadable/download/react-loadable-5.5.0.tgz#582251679d3da86c32aae2c8e689c59f1196d8c4"
+  integrity sha1-WCJRZ509qGwyquLI5onFnxGW2MQ=
+  dependencies:
+    prop-types "^15.5.0"
 
 react-redux@^6.0.0:
   version "6.0.0"
