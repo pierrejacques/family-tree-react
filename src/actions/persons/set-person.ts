@@ -1,5 +1,5 @@
-import { Person } from 'src/interface/person';
-import { ReduxAction } from 'src/interface/redux';
+import { Person } from 'src/interface/person'
+import { ReduxAction } from 'src/interface/redux'
 
 export const SET_PERSON = 'SET_PERSON'
 

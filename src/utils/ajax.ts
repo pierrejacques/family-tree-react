@@ -1,5 +1,21 @@
-const baseURL = '//www.zhongxiaotuan.com/api/'
+import Axios from 'axios'
 
-export default (url: string, ...params: any[]) => {
-    return fetch(baseURL + url, ...params).then(res => res.json())
+const createAjax = (baseURL) => {
+    const instance = Axios.create({
+        baseURL,
+        withCredentials: true,
+    })
+    instance.interceptors.response.use(
+        (res) => {
+            if (res.data.code === 401) {
+                setTimeout(() => window.location.href = '#/login', 0)
+            }
+            return res
+        },
+    )
+    return instance
 }
+
+export default createAjax(
+    'https://www.zhongxiaotuan.com/api/',
+)

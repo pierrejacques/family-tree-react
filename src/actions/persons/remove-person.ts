@@ -1,4 +1,4 @@
-import { ReduxAction } from 'src/interface/redux';
+import { ReduxAction } from 'src/interface/redux'
 
 export const REMOVE_PERSON = 'REMOVE_PERSON'
 

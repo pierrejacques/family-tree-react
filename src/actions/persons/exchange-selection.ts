@@ -1,4 +1,4 @@
-import { ReduxAction } from 'src/interface/redux';
+import { ReduxAction } from 'src/interface/redux'
 
 export const EXCHANGE_SELECTION = 'EXCHANGE_SELECTION'
 

@@ -1,5 +1,5 @@
-import { ReduxAction } from 'src/interface/redux';
-import { PersonSelections } from 'src/interface/person';
+import { ReduxAction } from 'src/interface/redux'
+import { PersonSelections } from 'src/interface/person'
 
 const defaultState: PersonSelections = {
     me: '',

@@ -1,0 +1,89 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #EEE;
+  padding-right: 5%;
+  &__img {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+  &__form {
+    box-sizing: border-box;
+    padding: 50px 25px;
+    z-index: 1;
+    text-align: center;
+  }
+  &__text {
+    z-index: 1;
+
+  }
+
+  .form {
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    &__title {
+
+    }
+    &__form {
+      padding: 40px 0 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #EEE;
+    }
+    &__input {
+      display: block;
+      width: 300px;
+      line-height: 32px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      text-indent: .5em;
+      border-radius: 3px;
+      font-weight: light;
+      margin-top: 12px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &.error{
+        border: 1px solid #ff755d;
+        &::after {
+          content: attr(data-error-text);
+        }
+      }
+      &--submit {
+        @valid-color: #2bc538;
+        margin-top: 30px;
+        background: @valid-color;
+        border-color: @valid-color;
+        color: white;
+        font-weight: normal;
+      }
+    }
+    &__switch {
+      color: #4e6eff;
+      padding: 20px 0;
+    }
+  }
+
+  .intro-text {
+    text-align: right;
+    color: #485386;
+    text-shadow: 0 0 2px white;
+    font-family: serif;
+    &__title {
+      font-size: 2em;
+      font-weight: 800;
+      margin: 40px 0 10px;
+    }
+    &__sub-title {
+      
+    }
+  }
+}

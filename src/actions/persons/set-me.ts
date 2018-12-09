@@ -1,4 +1,4 @@
-import { ReduxAction } from 'src/interface/redux';
+import { ReduxAction } from 'src/interface/redux'
 
 export const SET_ME = 'SET_ME'
 
