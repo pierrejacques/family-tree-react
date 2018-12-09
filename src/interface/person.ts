@@ -10,8 +10,7 @@ export interface Person {
     id: string
     firstName: string
     lastName: string
-    bornOn: string
-    deadOn: string
+    bornOn: number
     isMale: boolean
     fellow: string
     father: string

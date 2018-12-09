@@ -7,6 +7,7 @@ export interface ReduxState extends PersonData {
 export interface ReduxAction<T> {
     type: string
     reversable?: boolean
+    reset?: boolean
     value?: T
 }
 

@@ -1,11 +1,12 @@
 import { PersonData } from 'src/interface/person'
 import { ReduxAction } from 'src/interface/redux'
 
-export const DATA_SET = 'DATA_SET'
+export const SET_DATA = 'SET_DATA'
 
 export default (data: PersonData): ReduxAction<PersonData> => {
     return {
-        type: DATA_SET,
+        type: SET_DATA,
+        reset: true,
         value: data,
     }
 }

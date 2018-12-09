@@ -5,9 +5,9 @@ import ajax from 'src/utils/ajax'
 
 import dataSet from '../persons/set-data'
 
-export default () => {
+export default () => () => {
     return (dispatch: Dispatch) => {
-        ajax.get('latestTree').then((res) => {
+        ajax.get('data/latestVersion').then((res) => {
             dispatch(dataSet(res.data.data as PersonData))
         })
     }

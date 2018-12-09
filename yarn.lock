@@ -45,6 +45,11 @@
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.12.12.tgz#e15a9d034d9210f00320ef718a50c4a799417c47"
   integrity sha1-4VqdA02SEPADIO9xilDEp5lBfEc=
 
+"@types/object-hash@^1.2.0":
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/@types/object-hash/download/@types/object-hash-1.2.0.tgz#d65904331bd0b05c7d5ece75f9ddfdbe82affd30"
+  integrity sha1-1lkEMxvQsFx9Xs51+d39voKv/TA=
+
 "@types/prop-types@*":
   version "15.5.6"
   resolved "http://registry.npm.taobao.org/@types/prop-types/download/@types/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
@@ -2449,6 +2454,11 @@ detect-port-alt@1.1.6:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+diff-match-patch@^1.0.0:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/diff-match-patch/download/diff-match-patch-1.0.4.tgz#6ac4b55237463761c4daf0dc603eb869124744b1"
+  integrity sha1-asS1UjdGN2HE2vDcYD64aRJHRLE=
 
 diff@^3.2.0:
   version "3.5.0"
@@ -4885,6 +4895,14 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+jsondiffpatch@^0.3.11:
+  version "0.3.11"
+  resolved "http://registry.npm.taobao.org/jsondiffpatch/download/jsondiffpatch-0.3.11.tgz#43f9443a0d081b5f79d413fe20f302079e493201"
+  integrity sha1-Q/lEOg0IG1951BP+IPMCB55JMgE=
+  dependencies:
+    chalk "^2.3.0"
+    diff-match-patch "^1.0.0"
+
 jsonfile@^2.1.0:
   version "2.4.0"
   resolved "http://registry.npm.taobao.org/jsonfile/download/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
@@ -5727,6 +5745,11 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
+
+object-hash@^1.3.1:
+  version "1.3.1"
+  resolved "http://registry.npm.taobao.org/object-hash/download/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
+  integrity sha1-/eRSCYqVHLFF8Dm7fUVUSd3BJt8=
 
 object-keys@^1.0.12:
   version "1.0.12"
