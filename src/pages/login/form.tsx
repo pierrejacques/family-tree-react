@@ -41,12 +41,11 @@ export default class Form extends React.PureComponent<FormProps, FormState> {
   }
 
   setValue = (key, value) => {
-    const { errorText } = this.state.inputs[key]
     const inputs = Object.assign({}, this.state.inputs, {
       [key]: {
         virgin: false,
         value,
-        errorText,
+        errorText: '',
       },
     })
     this.setState({ inputs })
@@ -108,16 +107,20 @@ export default class Form extends React.PureComponent<FormProps, FormState> {
           .sort(({ order: a }, { order: b }) => a > b ? 1 : -1)
           .map(({ value, errorText, type, placeholder, key }) => {
             return (
-              <input
-                key={key}
-                className={`form__input ${errorText ? 'error' : ''}`}
-                type={type}
-                placeholder={placeholder}
-                value={value}
-                data-error-text={errorText}
-                onChange={e => this.setValue(key, e.target.value)}
-                onBlur={() => this.validate(key)}
-              />
+              <div key={key}>
+                <input
+                  autoComplete='off'
+                  className={`form__input ${errorText ? 'error' : ''}`}
+                  type={type}
+                  placeholder={placeholder}
+                  value={value}
+                  onChange={e => this.setValue(key, e.target.value)}
+                  onBlur={() => this.validate(key)}
+                />
+                <pre className='form__error'>
+                  {errorText}
+                </pre>
+              </div>
             )
           })
         }

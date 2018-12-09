@@ -27,11 +27,13 @@
   }
 
   .form {
+    @alert-color: #ff593b;
+    @valid-color: #2bc538;
     background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     &__title {
-
+      color: #666;
     }
     &__form {
       padding: 40px 0 15px;
@@ -47,24 +49,21 @@
       text-indent: .5em;
       border-radius: 3px;
       font-weight: light;
-      margin-top: 12px;
-      &:first-of-type {
-        margin-top: 0;
-      }
       &.error{
-        border: 1px solid #ff755d;
-        &::after {
-          content: attr(data-error-text);
-        }
+        border: 1px solid @alert-color;
       }
       &--submit {
-        @valid-color: #2bc538;
         margin-top: 30px;
         background: @valid-color;
         border-color: @valid-color;
         color: white;
         font-weight: normal;
       }
+    }
+    &__error {
+      line-height: 0;
+      text-align: left;
+      color: @alert-color;
     }
     &__switch {
       color: #4e6eff;
