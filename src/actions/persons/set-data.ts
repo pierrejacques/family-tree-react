@@ -6,7 +6,8 @@ export const SET_DATA = 'SET_DATA'
 export default (data: PersonData): ReduxAction<PersonData> => {
     return {
         type: SET_DATA,
-        reset: true,
+        reversable: true,
+        isVersionOperation: true,
         value: data,
     }
 }

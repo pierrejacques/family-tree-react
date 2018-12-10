@@ -82,7 +82,7 @@ export default class LoginPage extends React.PureComponent {
 
   regist = (state): void => {
     const { userName: username, password } = state
-    ajax.post('user/newUser', { username, password }).then()
+    ajax.put('user/newUser', { username, password }).then()
   }
 
   render() {
