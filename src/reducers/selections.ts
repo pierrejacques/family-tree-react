@@ -14,13 +14,13 @@ const defaultState: PersonSelections = {
 export default (state: PersonSelections = defaultState, action: ReduxAction<any>): PersonSelections => {
     const { value, type } = action
     if (type === REMOVE_PERSON) {
-        if (action.value === state.current) {
+        if (value === state.current) {
             return {
                 me: state.me,
                 current: '',
             }
         }
-        if (action.value === state.me) {
+        if (value === state.me) {
             return  {
                 me: '',
                 current: state.current,
@@ -30,12 +30,12 @@ export default (state: PersonSelections = defaultState, action: ReduxAction<any>
     if (type === SET_CURRENT) {
         return {
             me: state.me,
-            current: action.value,
+            current: value,
         }
     }
     if (type === SET_ME) {
         return {
-            me: action.value,
+            me: value,
             current: state.current,
         }
     }

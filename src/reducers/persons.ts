@@ -11,16 +11,16 @@ export default (state: Persons = defaultState, action: ReduxAction<any>): Person
     const { type, value } = action
     if (type === SET_PERSON) {
         return Object.assign({}, state, {
-            [action.value.id]: action.value
+            [value.id]: value
         })
     }
     if (type === REMOVE_PERSON) {
         const newState = Object.assign({}, state)
-        Reflect.deleteProperty(newState, action.value)
+        Reflect.deleteProperty(newState, value)
         return newState
     }
     if (type === SET_DATA) {
-        return action.value.persons
+        return value.persons
     }
     return state
 }
