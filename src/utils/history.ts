@@ -1,6 +1,6 @@
 import { DiffPatcher, Delta } from 'jsondiffpatch'
 
-import { ReduxState, ReduxAction } from '../interface/redux';
+import { ReduxState } from '../interface/redux';
 
 const diffPatcher = new DiffPatcher({
     cloneDiffValues: true,

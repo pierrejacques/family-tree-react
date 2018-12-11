@@ -1,31 +1,9 @@
 import { DiffPatcher } from 'jsondiffpatch'
-import createPerson from './create-person'
 import version from './version'
+import StateFactory from '../test-utils/state-factory'
 
-const fromState = {
-    persons: {
-        me: createPerson({ id: 'me' }),
-        current: createPerson({ id: 'current' }),
-        other: createPerson({ id: 'other' }),
-    },
-    selections: {
-        current: 'current',
-        me: 'me',
-    },
-}
-
-const toState = {
-    persons: {
-        me: createPerson({ id: 'me' }),
-        current: createPerson({ id: 'current' }),
-        other: createPerson({ id: 'other' }),
-        another: createPerson({ id: 'another' }),
-    },
-    selections: {
-        current: 'me',
-        me: 'current',
-    },
-}
+const fromState = StateFactory()
+const toState = StateFactory()
 
 const diffPatcher = new DiffPatcher({
     cloneDiffValues: true,

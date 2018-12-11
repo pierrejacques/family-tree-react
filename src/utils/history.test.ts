@@ -1,28 +1,5 @@
 import history from './history'
-import createPerson from './create-person'
-import { ReduxState } from '../interface/redux';
-
-const StateFactory = (count = 5): ReduxState => {
-    const persons = {}
-    let me = ''
-    let current = ''
-    for (let i = 0; i < count; i ++) {
-        const person = createPerson()
-        Reflect.set(persons, person.id, person)
-        if (!me) {
-            me = person.id
-        } else if (!current) {
-            current = person.id
-        }
-    }
-    return {
-        persons,
-        selections: {
-            me,
-            current,
-        }
-    }
-}
+import StateFactory from '../test-utils/state-factory'
 
 const state1 = StateFactory()
 const state2 = StateFactory()
