@@ -1,8 +1,6 @@
 import { DiffPatcher, Delta } from 'jsondiffpatch'
 
 import { ReduxState, ReduxAction } from '../interface/redux';
-import { REDO } from '../actions/history/redo';
-import { UNDO } from '../actions/history/undo';
 
 const diffPatcher = new DiffPatcher({
     cloneDiffValues: true,
@@ -17,38 +15,29 @@ export default {
         if (pointer < 0) {
             pointer = 0
         } else {
-            pointer++
             patches.splice(pointer)
             patches.push(
                 diffPatcher.diff(currentState, newState)
             )
+            pointer++
         }
         currentState = newState
-    },
-    reduce(action: ReduxAction<null>): ReduxState {
-        if (action.type === REDO) {
-            return this.redo()
-        }
-        if (action.type === UNDO) {
-            return this.undo()
-        }
-        return currentState
     },
     undo(): ReduxState {
         if (pointer > 0) {
             pointer --
             const patch = patches[pointer]
-            const newState = diffPatcher.clone(currentState)
-            return diffPatcher.unpatch(newState, patch)
+            const lastState = diffPatcher.clone(currentState)
+            currentState = diffPatcher.unpatch(lastState, patch)
         }
         return currentState
     },
     redo(): ReduxState {
-        if (patches.length > pointer + 1) {
+        if (patches.length && patches.length > pointer) {
             const patch = patches[pointer]
-            const newState = diffPatcher.clone(currentState)
+            const nextState = diffPatcher.clone(currentState)
+            currentState = diffPatcher.patch(nextState, patch)
             pointer ++
-            return diffPatcher.patch(newState, patch)
         }
         return currentState
     },
